@@ -1,4 +1,4 @@
--- MySQL dump 10.17  Distrib 10.3.16-MariaDB, for Win64 (AMD64)
+﻿-- MySQL dump 10.17  Distrib 10.3.16-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: klaussbrass
 -- ------------------------------------------------------
@@ -502,70 +502,6 @@ LOCK TABLES `registro_pagos` WRITE;
 /*!40000 ALTER TABLE `registro_pagos` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `requerimiento`
---
-
-DROP TABLE IF EXISTS `requerimiento`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `requerimiento` (
-  `idrequerimiento` int(11) NOT NULL AUTO_INCREMENT,
-  `nombreReq` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `fechaEntrega` date NOT NULL,
-  `pagoEstimado` double NOT NULL,
-  `RUCempresa` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `nombre_emp` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `calidadReq` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `compromisoPago` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `fecha_registro` date NOT NULL,
-  `cantidad_productos` double NOT NULL,
-  PRIMARY KEY (`idrequerimiento`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `requerimiento`
---
-
-LOCK TABLES `requerimiento` WRITE;
-/*!40000 ALTER TABLE `requerimiento` DISABLE KEYS */;
-INSERT INTO `requerimiento` VALUES (1,'cerraduras ultra','de tres cierres electrico','2021-02-19',5000,'390444','emp1','Regular','20% pago adelantado','2021-02-02',100),(2,'tornillos','5 hilos x mil','2021-02-13',4000,'9511ff33','emp2','Buena','5% de defectos se rechaza','2021-02-02',1000),(3,'llaves para moto','llaves con seguro reforzado','2021-04-02',7000,'9974722','motos ronco','Alta','pago contra entrega','2021-02-02',14000),(4,'brazos para freno v-brake','frenos de laton plateado','2021-02-27',8000,'822441','monark del peru','Alta','1% se procede a devolucion','2021-02-02',8000),(5,'carcasa para grupo electrógeno','pintura aislante de calor','2021-04-10',50000,'542233','modasa','Buena','pago por deuda','2021-02-02',1000),(6,'vallas separadoras','debe contener marca de la MML','2021-05-16',70000,'80854','municipalidad de lima','Media','10% adelanto','2021-02-02',1500),(7,'casilleros de metal 6x10','tamaño 40x40','2021-03-17',20000,'902993','maletek','Media','incluyen cerraduras','2021-02-02',20),(8,'lavaderos provisionales','portatiles para poner rotoplas','2021-02-26',500,'876542','cc arenales','Baja','pago por adelantado','2021-02-03',5);
-/*!40000 ALTER TABLE `requerimiento` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `usuario`
---
-
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuario` (
-  `idUser` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre1` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  `Nombre2` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `ApellidoP` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  `ApellidoM` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  `Contraseña` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  `Sueldo` float NOT NULL,
-  `TipoContrato` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  `Email` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  `tipoUsuario` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuario`
---
-
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Juan','Lorenzo','Gutierrez','Jorgechagua','1234',5000,'Estable 5 años','juan@aea.com','Jefe Produccion'),(2,'Alex','Rommel','Rojas','Coaquira','1234',4000,'Estable 4 años','rommel@aea.com','Atencion al Cliente'),(3,'Argenis',NULL,'Uceda','Malca','1234',3000,'Temporal 12 meses','argenis@aea.com','Asistente Compras'),(4,'Jesus','Sebastian','Huamanculi','Casavilca','1234',4000,'Estable 3 años','sebas@aea.com','Proveedor'),(5,'Jose','Miguel','Vilca','Huillcaya','1234',4000,'Temporal 6 meses','jose@aea.com','Operario Almacen'),(6,'Angie','Alessandra','Olaya','Silipu','1234',5000,'Estable 4 añoss','angie@aea.com','Jefe Compras'),(7,'Angelo','Jesus','Davalos','Salvador','1234',3000,'Temporal 12 meses','angelo@aea.com','Inspector Calidad'),(8,'Enrique','Miguel','Chalco','Vila','1234',4000,'Temporal 12 meses','chalco@aea.com','Jefe Calidad'),(9,'Natalie',NULL,'Paulett','Ramirez','1234',5000,'Estable 3 años','natalie@aea.com','Jefe Area Contable'),(10,'Martin',NULL,'Barueto','Suarez','1234',2500,'Temporal 12 meses','barueto@aea.com','Operario Produccion'),(11,'Sandra','Briggite','Chavarry','Alvarez','1234',2500,'Temporal 12 meses','sandra@aea.com','Operario Produccion'),(12,'Abigail','Marife','Montes','Yngar','1234',2500,'Temporal 12 meses','abigail@aea.com','Operario Produccion'),(13,'alma',NULL,'molina','reyes','1234',2500,'Temporal 12 meses','alma@aea.com','Operario Produccion'),(14,'Alvaro',NULL,'Espiritu','Inga','1234',2500,'Temporal 12 meses','alvaro@aea.com','Operario Produccion'),(15,'cecilia',NULL,'cilloniz','valenzuela','1234',4000,'Temporal 6 meses','cecilia@aea.com','Inspector Calidad'),(16,'melissa',NULL,'pradell','lartiga','1234',4000,'Temporal 6 meses','mels@aea.com','Inspector Calidad'),(17,'hugo',NULL,'jaramillo','ruiz','1234',4000,'Temporal 6 meses','hugo@aea.com','Inspector Calidad');
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
